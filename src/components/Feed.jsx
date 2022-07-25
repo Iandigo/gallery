@@ -49,7 +49,7 @@ const Feed = () => {
       <div>
         {feeds
           .filter((feed) => {
-            if (searchTerm == "") {
+            if (searchTerm === "") {
               return feed;
             }
             if (feed.title.toLocaleLowerCase().includes(searchTerm)) {

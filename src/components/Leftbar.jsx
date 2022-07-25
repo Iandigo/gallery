@@ -1,16 +1,6 @@
-import { Container, Link, makeStyles, Typography } from "@material-ui/core";
-import {
-  Bookmark,
-  List,
-  ExitToApp,
-  Home,
-  Person,
-  PhotoCamera,
-  PlayCircleOutline,
-  Settings,
-  Storefront,
-  TabletMac,
-} from "@material-ui/icons";
+import { Container, makeStyles, Typography } from "@material-ui/core";
+import { Home, PhotoCamera, PlayCircleOutline } from "@material-ui/icons";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -53,21 +43,17 @@ const Leftbar = () => {
   const classes = useStyles();
   return (
     <Container className={classes.container}>
-      <Link href="/" className={classes.item}>
+      <Link to="/" className={classes.item}>
         <Home className={classes.icon} />
         <Typography className={classes.text}>Homepage</Typography>
       </Link>
-      <Link href="/camera" className={classes.item}>
+      <Link to="/camera" className={classes.item}>
         <PhotoCamera className={classes.icon} />
         <Typography className={classes.text}>Camera</Typography>
       </Link>
-      <Link href="/videos" className={classes.item}>
+      <Link to="/videos" className={classes.item}>
         <PlayCircleOutline className={classes.icon} />
         <Typography className={classes.text}>Videos</Typography>
-      </Link>
-      <Link href="/gallery" className={classes.item}>
-        <Bookmark className={classes.icon} />
-        <Typography className={classes.text}>Gallery</Typography>
       </Link>
     </Container>
   );

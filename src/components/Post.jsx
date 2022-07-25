@@ -8,10 +8,8 @@ import {
   makeStyles,
   Typography,
   Modal,
-  IconButton,
   CardHeader,
 } from "@material-ui/core";
-import { AddIcon } from "@material-ui/icons";
 import { useState } from "react";
 
 const useStyles = makeStyles((theme) => ({
