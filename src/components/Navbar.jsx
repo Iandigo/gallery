@@ -28,24 +28,7 @@ const useStyles = makeStyles((theme) => ({
       display: "none",
     },
   },
-  search: {
-    display: "flex",
-    alignItems: "center",
-    backgroundColor: alpha(theme.palette.common.white, 0.15),
-    "&:hover": {
-      backgroundColor: alpha(theme.palette.common.white, 0.25),
-    },
-    borderRadius: theme.shape.borderRadius,
-    width: "50%",
-    [theme.breakpoints.down("sm")]: {
-      display: (props) => (props.open ? "flex" : "none"),
-      width: "70%",
-    },
-  },
-  input: {
-    color: "white",
-    marginLeft: theme.spacing(1),
-  },
+
   cancel: {
     [theme.breakpoints.up("sm")]: {
       display: "none",
@@ -68,6 +51,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+
   const classes = useStyles({ open });
   return (
     <AppBar position="fixed">
@@ -78,11 +62,7 @@ const Navbar = () => {
         <Typography variant="h6" className={classes.logoSm}>
           GALLERY
         </Typography>
-        <div className={classes.search}>
-          <Search />
-          <InputBase placeholder="Search..." className={classes.input} />
-          <Cancel className={classes.cancel} onClick={() => setOpen(false)} />
-        </div>
+
         <div className={classes.icons}>
           <Search
             className={classes.searchButton}
